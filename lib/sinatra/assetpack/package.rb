@@ -68,7 +68,7 @@ module Sinatra
       #   }.join("\n")
       # end
       
-      def to_development_html(options={})
+      def to_development_html(path_prefix, options={})
         app_root = Padrino.mounted_apps.find{ |app| app.name == @assets.app.name }.uri_root
         path_prefix = app_root == '/' ? '' : app_root
         paths_and_files.map { |path, file|
